@@ -49,6 +49,3 @@ You can run the .py file directly, using the following command to run the model:
 
 ### Acknowledgement
 We owe many thanks to Ng Hong Wei for cleaning the BGP data.
-
-### License
-MIT
