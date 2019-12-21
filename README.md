@@ -1,6 +1,6 @@
 ## Measuring and Improving the Use of Graph Information in Graph Neural Networks
 
-#### Authors: [Yifan Hou](https://yifan-h.github.io/)(yfhou@cse.cuhk.edu.hk), Jian Zhang (jzhang@cse.cuhk.edu.hk), [James Cheng](https://www.cse.cuhk.edu.hk/~jcheng/) (jcheng@cse.cuhk.edu.hk), Kaili Ma (klma@cse.cuhk.edu.hk), Richard T. B. Ma (tbma@comp.nus.edu.sg), Hongzhi Chen (hzchen@cse.cuhk.edu.hk), Ming-Chang Yang (mcyang@cse.cuhk.edu.hk)
+#### Authors: [Yifan Hou](https://yifan-h.github.io/), Jian Zhang, [James Cheng](https://www.cse.cuhk.edu.hk/~jcheng/), Kaili Ma , Richard T. B. Ma, Hongzhi Chen, Ming-Chang Yang
 
 ### Overview
 
