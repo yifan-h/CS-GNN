@@ -112,28 +112,28 @@ class GTN(nn.Module):
         super(GTN, self).__init__()
         self.g = g
         self.num_layers = num_layers
-        self.gat_layers = nn.ModuleList()
+        self.gtn_layers = nn.ModuleList()
         self.activation = activation
             
         # input projection (no residual)
-        self.gat_layers.append(GraphTopoAttention(g, feats_d, feats_t_d, num_hidden, heads[0], 
+        self.gtn_layers.append(GraphTopoAttention(g, feats_d, feats_t_d, num_hidden, heads[0], 
                                                 feat_drop, attn_drop, False, concat))
         # hidden layers
         fix_d = concat*(feats_d)
         for l in range(1, num_layers+1):
             # due to multi-head, the in_dim = num_hidden * num_heads
-            self.gat_layers.append(GraphTopoAttention(g, num_hidden*(heads[l-1]+1*concat), feats_t_d, 
+            self.gtn_layers.append(GraphTopoAttention(g, num_hidden*(heads[l-1]+1*concat), feats_t_d, 
                             num_hidden, heads[l], feat_drop, attn_drop, residual, concat))
         # output projection
-        self.gat_layers.append(GraphTopoAttention(g, num_hidden*(heads[l-1]+1*concat), feats_t_d, 
+        self.gtn_layers.append(GraphTopoAttention(g, num_hidden*(heads[l-1]+1*concat), feats_t_d, 
                 num_classes, heads[-1], feat_drop, attn_drop, residual, concat, True))
 
     def forward(self, inputs, topo):
         h, t = inputs, F.normalize(topo)
         for l in range(self.num_layers+1):
-            h = self.gat_layers[l](h, t)
+            h = self.gtn_layers[l](h, t)
             h = self.activation(h)
         # output projection
-        logits = self.gat_layers[-1](h, t)
+        logits = self.gtn_layers[-1](h, t)
         return logits
         
