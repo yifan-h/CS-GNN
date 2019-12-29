@@ -23,7 +23,7 @@ def evaluate(g, feats, feats_t, labels, mask, model, loss_fcn, device):
     with torch.no_grad():
         model.eval()
         model.g = g
-        for layer in model.gat_layers:
+        for layer in model.gtn_layers:
             layer.g = g
         output = model(feats.float(), feats_t.float())
         loss = loss_fcn(output[mask], labels[mask])
@@ -85,7 +85,7 @@ def train_main(args):
             feats_t = torch.FloatTensor(train_subfeats_t[idx[i]]).to(device)
             labels = torch.FloatTensor(train_sublabels[idx[i]]).to(device)
             model.g = train_subgraphs[idx[i]]
-            for layer in model.gat_layers:
+            for layer in model.gtn_layers:
                 layer.g = train_subgraphs[idx[i]]
             output = model(feats.float(), feats_t.float())
             loss = loss_fcn(output[train_submasks[idx[i]]], labels[train_submasks[idx[i]]])
