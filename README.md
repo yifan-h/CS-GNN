@@ -10,7 +10,7 @@ This paper introduces a context-surrounding GNN framework and proposes two smoot
 
 Please see the [paper](https://openreview.net/forum?id=rkeIIkHKvS) for more details. The processed BGP data can be found [here](https://drive.google.com/open?id=1EPFeWhpMBr9Vg7asRR7oLofLwDhqJI6d).
 
-*Note:* If you make use of this code or the CS-GNN model in your work, please cite the following paper:
+*Note:* If you make use of this code, the CS-GNN model or the BGP data in your work, please cite the following paper:
 
     @inproceedings{
     hou2020measuring,
