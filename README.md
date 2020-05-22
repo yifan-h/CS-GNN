@@ -35,6 +35,8 @@ You can run the .py file directly, using the following command to run the model:
 
 	$ python ./src/train.py
 
+You may refer ./smoothness/smoothness.py for smoothness computing.
+
 #### Input format
 
 * <train_prefix>-G.json -- A networkx-specified json file describing the input graph. Nodes have 'val' and 'test' attributes specifying if they are a part of the validation and test sets. When node's 'val' and 'test' are all 'True', it means this node is unlabeled.
