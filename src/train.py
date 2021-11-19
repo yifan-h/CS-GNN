@@ -150,8 +150,8 @@ def train_main(args):
                                 model, 
                                 loss_fcn,
                                 device)
-    test_score_list.append(test_score)
-    test_loss_list.append(test_loss)
+        test_score_list.append(test_score)
+        test_loss_list.append(test_loss)
     print("The test Loss: {:.4f}, F1-Score: {:.4f}".format(sum(test_loss_list)/len(test_loss_list), 
                                                                 sum(test_score_list)/len(test_score_list)))
 
