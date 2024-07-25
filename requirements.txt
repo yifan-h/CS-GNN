@@ -1,4 +1,4 @@
-torch==1.0.1
+torch==2.2.0
 torchvision==0.2.2
 numpy==1.22.0
 scikit-learn==0.20.3
